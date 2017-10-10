@@ -5,15 +5,18 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import mainPackage.Longest;
 import mainPackage.VetorOrdenado;
 
 public class VetorOrdenadoTest {
 
 	VetorOrdenado vet;
+	Longest longest;
 	
 	@Before
 	public void init(){
 		vet = new VetorOrdenado(5);
+		longest = new Longest();
 		
 	}
 	
@@ -62,6 +65,11 @@ public class VetorOrdenadoTest {
 		vet.ins(3);
 		assertEquals(0 , vet.get(6));	
 		assertEquals(1 , vet.get(-1));	
+	}
+	
+	@Test
+	public void testGetBinary() {
+		
 	}
 
 }
