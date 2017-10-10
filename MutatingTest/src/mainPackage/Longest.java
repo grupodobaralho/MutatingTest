@@ -3,27 +3,36 @@ package mainPackage;
 import java.util.*;
 
 public class Longest {
+	
+	public static int dec_num, rem, quot, i = 1, j;
+	public static int bin_num[] = new int[100];
+	public static Scanner scan = new Scanner(System.in);
+	public static String binary_str = "";
+	
 	public static void main(String[] args) {
-
-		int dec_num, rem, quot, i = 1, j;
-		int bin_num[] = new int[100];
-		Scanner scan = new Scanner(System.in);
 
 		System.out.print("Input a Decimal Number : ");
 		dec_num = scan.nextInt();
-
+		System.out.print("Binary number is: ");
+		System.out.print(getBinary(dec_num));
+		System.out.print("\nLength of the longest sequence: " + getLengthLongSeq(binary_str));
+		
+	}
+	
+	public static int getBinary(int dec_num){
 		quot = dec_num;
-
+		
 		while (quot != 0) {
 			bin_num[i++] = quot % 2;
 			quot = quot / 2;
 		}
-		String binary_str = "";
-		System.out.print("Binary number is: ");
 		for (j = i - 1; j > 0; j--) {
 			binary_str = binary_str + bin_num[j];
 		}
-		System.out.print(binary_str);
+		return Integer.parseInt(binary_str);
+	}
+	
+	public static int getLengthLongSeq(String binary_str){
 		i = binary_str.length() - 1;
 		while (binary_str.charAt(i) == '0') {
 			i--;
@@ -38,7 +47,6 @@ public class Longest {
 				ctr++;
 			}
 		}
-		length = Math.max(length, ctr);
-		System.out.println("\nLength of the longest sequence: " + length);
+		return length = Math.max(length, ctr);		
 	}
 }
