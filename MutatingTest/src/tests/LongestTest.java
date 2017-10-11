@@ -10,17 +10,18 @@ import mainPackage.VetorOrdenado;
 
 public class LongestTest {
 	
-	private Longest bin;
+	private Longest bin, binAux;
 
 	@Before
 	public void init(){
 		bin = new Longest();
+		binAux = new Longest();
 		
 	}
 	
 	@Test
 	public void testGetBinaryValido() {
-		assertEquals("111", bin.getBinary(7));
+		assertEquals("1010", bin.getBinary(10));
 	}
 	
 	@Test
@@ -34,20 +35,27 @@ public class LongestTest {
 	}
 	
 	@Test
-	public void testGetLengthLongSeqsZero() {
-		assertEquals(0, bin.getLengthLongSeq("1111"));
+	public void testGetLengthLongSeqsSemZero() {
+		assertEquals(0, binAux.getLengthLongSeq("1111"));
 	}
 	
 	@Test
-	public void testGetLengthLongSeqZero2() {
-		assertEquals(0, bin.getLengthLongSeq("1000"));
+	public void testGetLengthLongSeqSemUmFinal() {
+		assertEquals(0, binAux.getLengthLongSeq("1000"));
 	}
 	
 	@Test
 	public void testGetLengthLongValido() {
-		assertEquals(2, bin.getLengthLongSeq("1001"));
+		assertEquals(2, binAux.getLengthLongSeq("1001"));
 	}
-
-
-
+	
+	@Test
+	public void testGetLengthLongInvalido() {
+		assertEquals(-1, binAux.getLengthLongSeq("2871"));
+	}
+	
+	@Test
+	public void testGetLengthInvalidoZero() {
+		assertEquals(-1, binAux.getLengthLongSeq("0"));
+	}
 }
