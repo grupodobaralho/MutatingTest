@@ -11,12 +11,10 @@ import mainPackage.VetorOrdenado;
 public class VetorOrdenadoTest {
 
 	VetorOrdenado vet;
-	Longest longest;
 	
 	@Before
 	public void init(){
 		vet = new VetorOrdenado(5);
-		longest = new Longest();
 		
 	}
 	
@@ -67,9 +65,5 @@ public class VetorOrdenadoTest {
 		assertEquals(1 , vet.get(-1));	
 	}
 	
-	@Test
-	public void testGetBinary() {
-		
-	}
 
 }
