@@ -6,6 +6,10 @@ public class VetorOrdenado {
 	private int pos;
 	private int tamanho;
 
+	public int getTamanho() {
+		return tamanho;
+	}
+
 	public VetorOrdenado(int tam) {
 		if (tam <= 0)
 			tam = 1;
@@ -34,7 +38,7 @@ public class VetorOrdenado {
 			i = tamanho - 1;
 		return (vet[i]);
 	}
-
+/*
 	public void ordena() {
 		int lim, k = 0, tmp;
 		boolean troca = true;
@@ -53,6 +57,6 @@ public class VetorOrdenado {
 			}
 			lim = k;
 		}
-	}
+	}*/
 
 }

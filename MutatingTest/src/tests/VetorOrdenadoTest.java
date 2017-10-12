@@ -19,6 +19,24 @@ public class VetorOrdenadoTest {
 	}
 	
 	@Test
+	public void testConstrutorTamMenor0() {
+		vet = new VetorOrdenado(-1);
+		assertEquals(vet.getTamanho(), 1);
+	}
+	
+	@Test
+	public void testConstrutorTam0() {
+		vet = new VetorOrdenado(0);
+		assertEquals(vet.getTamanho(), 1);
+	}
+	
+	@Test
+	public void testConstrutorTamMaior0() {
+		vet = new VetorOrdenado(5);
+		assertEquals(vet.getTamanho(), 5);
+	}
+	
+	@Test
 	public void testIns() {
 		assertTrue(vet.ins(-1));	
 		assertTrue(vet.ins(0));	
